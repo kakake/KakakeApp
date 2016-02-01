@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>功能调试</title>
+		<meta name="viewport" content="width=device-width, initial-scale=1,maximum-scale=1,user-scalable=no">
+		<meta name="apple-mobile-web-app-capable" content="yes">
+		<meta name="apple-mobile-web-app-status-bar-style" content="black">
+		
+		<!--标准mui.css-->
+		<link rel="stylesheet" href="../css/mui.min.css">
+		<!--App自定义的css-->
+		<link rel="stylesheet" type="text/css" href="../css/app.css"/>
+		<script src="../js/jquery-1.8.0.min.js"></script>
+		<script src="../js/jquery.query-2.1.7.js" ></script>
+		
+		<script src="iotdebug.js"></script>
+	</head>
+	<body>
+		<header class="mui-bar mui-bar-nav">
+			<a class="mui-action-back mui-icon mui-icon-left-nav mui-pull-left"></a>
+			<h1 class="mui-title">智能物联在线平台</h1>
+		</header>
+		<div class="mui-content">
+		    <div style="padding: 0px 0px;">
+				<div id="segmentedControl" class="mui-segmented-control">
+					<a class="mui-control-item mui-active" href="#item1">发送数据</a>
+					<a class="mui-control-item" href="#item2">接收数据</a>
+				</div>
+			</div>
+			<div id="item1" class="mui-control-content mui-active">
+				<ul class="mui-table-view ">
+				<li class="mui-table-view-cell">
+					<a id="txthost" class="mui-navigate-right" open-type="common" href="javascript:void();" onclick="openhost();">
+						选择树莓派主机和功能
+					</a>
+				</li>
+			</ul>
+				<h5 class="mui-content-padded">往树莓派主机发送数据</h5>
+				<div class="mui-input-row" style="margin: 0px 15px;">
+					<textarea id="cmdtext" rows="10" placeholder=""></textarea>
+				</div>
+				<div class="mui-button-row">
+					<button type="button" class="mui-btn mui-btn-primary" onclick="setpidata();">发送</button>&nbsp;&nbsp;
+					<button type="button" class="mui-btn mui-btn-nav" onclick="cleardata();">清空</button>
+				</div>
+			</div>
+			<div id="item2" class="mui-control-content">
+				<h5 class="mui-content-padded">接收树莓派回传的数据</h5>
+				<div class="mui-content-padded">
+				<a href="javascript:void(0);" class="mui-btn mui-btn-primary mui-btn-outlined" onclick="startoutput(this);" value="0">开启</a>
+				<a href="javascript:void(0);" class="mui-btn mui-btn-primary mui-btn-outlined" onclick="clearoutput();">清空</a>
+				<a href="javascript:void(0);" class="mui-btn mui-btn-primary mui-btn-outlined" onclick="alloutput();">取出所有</a>
+				</div>
+				<div id="output" class="mui-content-padded">
+					
+				</div>
+			</div>
+		</div>
+		
+        <script src="../js/mui.min.js"></script>
+        <script>
+		mui.init({
+			swipeBack:true //启用右滑关闭功能
+		});
+		</script>
+	</body>
+</html>

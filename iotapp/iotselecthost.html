@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>功能调试</title>
+		<meta name="viewport" content="width=device-width, initial-scale=1,maximum-scale=1,user-scalable=no">
+		<meta name="apple-mobile-web-app-capable" content="yes">
+		<meta name="apple-mobile-web-app-status-bar-style" content="black">
+
+		<!--标准mui.css-->
+		<link rel="stylesheet" href="../css/mui.min.css">
+		<!--App自定义的css-->
+		<link rel="stylesheet" type="text/css" href="../css/app.css"/>
+		<script src="../js/jquery-1.8.0.min.js"></script>
+		<script src="../js/jquery.query-2.1.7.js" ></script>
+		
+		<script src="iotselecthost.js"></script>
+	</head>
+	<body>
+		<header class="mui-bar mui-bar-nav">
+			<a class="mui-action-back mui-icon mui-icon-left-nav mui-pull-left"></a>
+			<h1 class="mui-title">智能物联在线平台</h1>
+		</header>
+		<div class="mui-content">
+			<div id="pilist" class="mui-input-group">
+				<div class="mui-input-row mui-radio mui-left">
+					<label>树莓派1号主机</label>
+					<input name="radio1" type="radio">
+				</div>
+				<div class="mui-input-row mui-radio mui-left">
+					<label>树莓派2号主机</label>
+					<input name="radio1" type="radio" checked>
+				</div>
+				<div class="mui-input-row mui-radio mui-left mui-disabled">
+					<label>树莓派3号主机</label>
+					<input name="radio1" type="radio" disabled="disabled">
+				</div>
+			</div>
+			<br />
+			<div id="pidev" class="mui-input-group">
+				<div class="mui-input-row mui-radio mui-left">
+					<label>主机状态</label>
+					<input name="radio1" type="radio">
+				</div>
+				<div class="mui-input-row mui-radio mui-left">
+					<label>GPIO编程</label>
+					<input name="radio1" type="radio" checked>
+				</div>
+			</div>
+			<div class="mui-content-padded">
+				<button type="button" class="mui-btn mui-btn-primary mui-btn-block" onclick="commithost();">确&nbsp;&nbsp;&nbsp;&nbsp;定</button>
+			</div>
+		</div>
+		<script src="../js/mui.min.js"></script>
+		<script>
+		mui.init({
+			swipeBack:true //启用右滑关闭功能
+		});
+		</script>
+	</body>
+</html>
